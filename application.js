@@ -1,6 +1,6 @@
 var cross = "X";
 var circle = "O";
-var actual_user = "X";
+var actualUser = "X";
 var gameState = ["", "", "", "", "", "", "", "", ""];
 const winningConditions = [
     [0, 1, 2],
@@ -16,14 +16,14 @@ const winningConditions = [
 function restartGame(){
 	document.querySelectorAll('.cell').forEach(cell => cell.innerHTML = "");
 	gameState = ["", "", "", "", "", "", "", "", ""];
-	actual_user = "X";
+	actualUser = "X";
 }
 
 function clickCell(index){
 	var id = "index_" + index;
 	if(document.getElementById(id).innerHTML == ""){
-		document.getElementById(id).innerHTML = actual_user;
-		gameState[parseInt(index)] = actual_user;
+		document.getElementById(id).innerHTML = actualUser;
+		gameState[parseInt(index)] = actualUser;
 		console.log(gameState);
 		handleResultValidation();
 		switchUser();
@@ -35,11 +35,11 @@ function clickCell(index){
 }
 
 function switchUser(){
-	if(actual_user == cross){
-		actual_user = circle;
+	if(actualUser == cross){
+		actualUser = circle;
 	}
 	else{
-		actual_user = cross;
+		actualUser = cross;
 	}
 }
 
@@ -68,5 +68,5 @@ function handleResultValidation() {
 }
 
 function winningMessage(){
-	alert(actual_user + " has won!");
+	alert(actualUser + " has won!");
 }
